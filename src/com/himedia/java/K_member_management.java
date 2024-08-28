@@ -189,7 +189,7 @@ public class K_member_management {
         //배열명: members
         int pricePlanNum = printPricePlan();
         String[][] members = new String[pricePlanNum*10][3];
-totalCnt=pricePlanNum*10;
+        totalCnt=pricePlanNum*10;
         while(true){
             //7번 프로그램 종료
             //"이용해주셔서 감사합니다"
