@@ -53,6 +53,40 @@ public class A_vendingMachine_2 {
                     }
                     break;
                 case 2:
+                    result=calcMoney(totalMoney,CIDER);
+                    if(result<0){
+                        printException();
+                    }else{
+                        totalMoney=result;
+                        System.out.println("사이다가 나왔습니다");
+                    }
+                    break;
+                case 3:
+                    result=calcMoney(totalMoney,FANTA);
+                    if(result<0){
+                        printException();
+                    }else{
+                        totalMoney=result;
+                        System.out.println("환타가 나왔습니다");
+                    }
+                    break;
+                case 4:
+                    result=calcMoney(totalMoney,WATER);
+                    if(result<0){
+                        printException();
+                    }else{
+                        totalMoney=result;
+                        System.out.println("물이 나왔습니다");
+                    }
+                    break;
+                case 5:
+                    totalMoney += getMoney();
+                    break;
+                case 6:
+                    System.out.printf("잔돈 : %d원이 반환되었습니다",totalMoney);
+                    return;
+                default:
+                    System.out.println("잘못누르셨습니다");
             }
         }
 
