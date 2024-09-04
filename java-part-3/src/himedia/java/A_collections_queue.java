@@ -35,6 +35,34 @@ class A_person {
     }
 }
 
+class Graph{
+    private LinkedList<Integer>[] graphList;
+
+    public Graph(int vertextCount) {
+        this.graphList = new LinkedList[vertextCount+1];
+
+        //각 인접 리스트 초기화
+        for (int i = 0; i < graphList.length; i++) {
+            graphList[i] = new LinkedList<>();
+        }
+    }
+
+    //간선 추가
+    public void addEdge(int v, int w) {
+        graphList[v].add(w);
+        graphList[w].add(v);
+    }
+
+    public LinkedList<Integer>[] getGraphList() {
+        return graphList;
+
+    }
+
+}
+
+
+
+
 
 public class A_collections_queue {
 
@@ -232,6 +260,42 @@ public class A_collections_queue {
     }
 
 
+
+    public static void exam4(){
+        boolean[] visited =new boolean[9+1];
+
+        Graph graph = new Graph(9);
+        graph.addEdge(1,2);
+        graph.addEdge(1,3);
+        graph.addEdge(2,3);
+        graph.addEdge(2,4);
+        graph.addEdge(2,6);
+        graph.addEdge(3,7);
+        graph.addEdge(4,5);
+        graph.addEdge(4,7);
+        graph.addEdge(4,8);
+        graph.addEdge(5,6);
+        graph.addEdge(7,8);
+        graph.addEdge(8,9);
+
+        //탐색
+        int startVertex=1;
+        Queue<Integer> queue =new LinkedList<>();
+        visited[startVertex]=true;
+        queue.add(startVertex);
+
+        while(queue.size()>0){
+            int vertex = queue.poll();
+            System.out.print(vertex+"->");
+
+            for(int w: graph.getGraphList()[vertex]){
+                if(!visited[w]){
+                    queue.add(w);
+                    visited[w]=true;
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
         exam2_2();

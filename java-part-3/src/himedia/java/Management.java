@@ -47,20 +47,7 @@ public class Management {
             switch(menu){
                 case 1:
                     addMember(); break;
-                case 2:
-                    showEmail(); break;
-                case 3:
-                    showName(); break;
-                case 4:
-                    showMember(); break;
-                case 5:
-                    modifyMember(); break;
-                case 6:
-                    deleteMember(); break;
-                case 7:
-                    changePrice(); break;
-                case 8:
-                    reset(); break;
+
                 case 9:
                     System.out.println("프로그램이 종료되었습니다");
                     return;
