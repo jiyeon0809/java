@@ -1,5 +1,7 @@
 package himedia.java;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +13,7 @@ public class AccountBookImpl implements AccountBook {
     private String itemDate [] = new String[MAX];
     private String item [] = new String[MAX];
     private int itemMoney [] = new int[MAX];
+    private String today;
 
     @Override
     public int printMenu() {
@@ -25,8 +28,10 @@ public class AccountBookImpl implements AccountBook {
     public String addItemsList() {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < MAX; i++) {
-            System.out.println("날짜를 입력하세요");
-            itemDate[i] = sc.nextLine();
+            System.out.println("날짜");
+            itemDate[i] = today;
+            today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            System.out.println(today);
             System.out.println("품명을 입력하세요");
             item[i] = sc.nextLine();
             System.out.println("금액을 입력하세요");
