@@ -52,7 +52,7 @@ public class AccountBookImpl implements AccountBook {
     }
 
     @Override
-    public void deleteSomeItems(String itemDate) {
+    public void deleteSomeItems() {
         Scanner sc = new Scanner(System.in);
         System.out.println("삭제할 내역을 선택하세요");
         String delete = sc.nextLine();

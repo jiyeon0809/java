@@ -5,5 +5,5 @@ public interface AccountBook {
     String addItemsList();
     void showHistory();
     void deleteAllItems();
-    void deleteSomeItems(String itemDate);
+    void deleteSomeItems();
 }
