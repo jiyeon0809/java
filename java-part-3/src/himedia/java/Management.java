@@ -9,9 +9,9 @@ public class Management {
     static int memberCapacity=0;
     static int memberCnt=0;
 
-    private boolean isStop;
-    private Scanner sc;
-    private ArrayList<Member>member;
+    private final boolean isStop;
+    private final Scanner sc;
+    private final ArrayList<Member>member;
 
     public Management() {
         isStop = false;
@@ -74,11 +74,7 @@ public class Management {
 
 
     public static int memberCapacity() {
-        switch(printMenu();){
-            case 1:
-
-
-        }
+        return -1;
     }
 
     public static boolean checkEmail(ArrayList<Member> member, String email) {
@@ -87,6 +83,7 @@ public class Management {
                 return true;
             }
         }
+        return false;
     }
 
 }

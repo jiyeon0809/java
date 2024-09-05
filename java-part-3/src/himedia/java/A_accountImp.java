@@ -2,6 +2,9 @@ package himedia.java;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class A_accountImp implements A_account{
@@ -9,12 +12,17 @@ public class A_accountImp implements A_account{
     public static final int ACCOUNT_MAX_LENGTH = 5;
     public static final int HISTORY_MAX_SIZE = 5;
 
-    public static String userAccount;
-    public static String userName;
-    public static int totalMoney;
+    private String userAccount;
+    private String userName;
+    private int totalMoney;
 
-    public static String[] histories = new String[HISTORY_MAX_SIZE];
-    public static int historyIdx = -1;
+    private List<String> histories;
+
+
+    public void A_accountImpl() {
+        histories = new ArrayList<>();
+    }
+
 
     @Override
     public void printCreateAccountMenu() {
@@ -86,23 +94,16 @@ public class A_accountImp implements A_account{
 
     @Override
     public void manageHistory(String message) {
-        historyIdx++;
-        if (historyIdx >= HISTORY_MAX_SIZE) {
-            for (int i = 0; i < HISTORY_MAX_SIZE - 1; i++) {
-                histories[i] = histories[i + 1];
-            }
-            historyIdx = HISTORY_MAX_SIZE - 1;
-        }
-        histories[historyIdx] = message + " - " + getNowDateTime();
+        histories.add(message + " - " + getNowDateTime());
 
     }
 
     @Override
     public void printHistory() {
         System.out.println("======== 내역조회 ========");
-        for ( int i = historyIdx; i >= 0; i-- ) {
-            if (histories[i] == null) continue;
-            System.out.println(histories[i]);
+        histories.sort(Comparator.reverseOrder());
+        for ( String h : histories ) {
+            System.out.println(h);
         }
     }
 
