@@ -58,13 +58,14 @@ public class AccountBookImpl implements AccountBook {
 
     @Override
     public void deleteSomeItems() {
+
+        for (int j = 0; j < itemsList.size(); j++) {
+            System.out.println("[" + j + "] " + itemsList.get(j));
+        }
+
         Scanner sc = new Scanner(System.in);
         System.out.println("삭제할 내역을 선택하세요");
-        String delete = sc.nextLine();
-        if(delete.equals(itemDate)){
-            itemsList.remove(delete);
-        }else{
-            System.out.println("삭제하려는 내역이 존재하지 않습니다.");
-        }
+        int idx = sc.nextInt();
+        itemsList.remove(idx);
     }
 }
