@@ -111,7 +111,12 @@ public class AccountBookImpl_2 implements AccountBook_2 {
         String fileName = scanner.nextLine();
 
         // 입력받은 파일명으로 파일 객체 생성
-        File file = new File("C:\\Users\\hi-pc-999\\Desktop\\Test\\"+fileName);
+     //   File file = new File("C:\\Users\\hi-pc-999\\Desktop\\Test\\"+fileName);
+
+        this.desktopPath = System.getProperty("user.home") + File.separator + "Desktop";
+        this.folderPath = desktopPath + File.separator + "Test";
+        this.myFolder = Paths.get(folderPath);
+        File file = new File(myFolder+"\\"+fileName);
 
         // 파일이 존재하는지 확인
         if (file.exists()) {
