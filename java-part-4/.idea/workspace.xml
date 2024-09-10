@@ -58,11 +58,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2louPankAuWhD2XwHBgDvsMd0Vf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -76,8 +76,9 @@
     "Gradle.java-part-4 [:A_jdbc.main()].executor": "Run",
     "Gradle.java-part-4 [:org.example.start.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pc/Desktop/java/java/java-part-4",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -141,6 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725858729521</updated>
       <workItem from="1725858730718" duration="9763000" />
+      <workItem from="1725868836782" duration="86000" />
     </task>
     <servers />
   </component>
