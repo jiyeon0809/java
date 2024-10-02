@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost3">
+<dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -1004,330 +1004,125 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <schema id="291" parent="1" name="learn_database">
-      <LastIntrospectionLocalTimestamp>2024-09-13.02:37:41</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="notice">
+      <LastIntrospectionLocalTimestamp>2024-09-13.07:16:50</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="performance_schema">
+    <schema id="294" parent="1" name="notice1">
+      <LastIntrospectionLocalTimestamp>2024-09-13.07:16:50</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+    <schema id="295" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="295" parent="1" name="sys">
+    <schema id="296" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="296" parent="1" name="mysql.infoschema">
+    <user id="297" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="mysql.session">
+    <user id="298" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.sys">
+    <user id="299" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="root">
+    <user id="300" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="300" parent="291" name="bonus">
+    <table id="301" parent="294" name="content">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="301" parent="291" name="content">
+    <table id="302" parent="294" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="302" parent="291" name="dept">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="303" parent="291" name="dept_fk">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="304" parent="291" name="dept_temp_2">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="305" parent="291" name="dept_temp_3">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="306" parent="291" name="emp">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="307" parent="291" name="emp_fk">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="308" parent="291" name="salgrade">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="309" parent="291" name="table_notnull">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="310" parent="291" name="user">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <table id="311" parent="291" name="users">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <column id="312" parent="300" name="ENAME">
+    <column id="303" parent="301" name="ID">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>varchar(10)|0s</StoredType>
+      <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="313" parent="300" name="JOB">
+    <column id="304" parent="301" name="USER_ID">
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(9)|0s</StoredType>
+      <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="314" parent="300" name="SAL">
+    <column id="305" parent="301" name="CONTENT">
+      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
+      <StoredType>text|0s</StoredType>
     </column>
-    <column id="315" parent="300" name="COMM">
+    <column id="306" parent="301" name="CREATED">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>4</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
-    </column>
-    <column id="316" parent="301" name="dateTime">
-      <Position>1</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="317" parent="301" name="article">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(300)|0s</StoredType>
-    </column>
-    <column id="318" parent="302" name="DEPTNO">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="319" parent="302" name="DNAME">
-      <Position>2</Position>
-      <StoredType>varchar(14)|0s</StoredType>
-    </column>
-    <column id="320" parent="302" name="LOC">
-      <Position>3</Position>
-      <StoredType>varchar(13)|0s</StoredType>
-    </column>
-    <index id="321" parent="302" name="PRIMARY">
-      <ColNames>DEPTNO</ColNames>
+    <index id="307" parent="301" name="PRIMARY">
+      <ColNames>ID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="322" parent="302" name="PRIMARY">
+    <key id="308" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="323" parent="303" name="DEPTNO">
+    <column id="309" parent="302" name="ID">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="324" parent="303" name="DNAME">
-      <Position>2</Position>
-      <StoredType>varchar(14)|0s</StoredType>
-    </column>
-    <column id="325" parent="303" name="LOC">
-      <Position>3</Position>
-      <StoredType>varchar(13)|0s</StoredType>
-    </column>
-    <index id="326" parent="303" name="PRIMARY">
-      <ColNames>DEPTNO</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="327" parent="303" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="328" parent="304" name="DEPTNO">
+    <column id="310" parent="302" name="USER_ID">
       <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="329" parent="304" name="DNAME">
       <Position>2</Position>
-      <StoredType>varchar(14)|0s</StoredType>
+      <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="330" parent="304" name="LOC">
-      <Position>3</Position>
-      <StoredType>varchar(13)|0s</StoredType>
-    </column>
-    <column id="331" parent="305" name="DEPTNO">
+    <column id="311" parent="302" name="PASSWORD">
       <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="332" parent="305" name="DNAME">
-      <Position>2</Position>
-      <StoredType>varchar(14)|0s</StoredType>
-    </column>
-    <column id="333" parent="305" name="LOC">
       <Position>3</Position>
-      <StoredType>varchar(13)|0s</StoredType>
+      <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <column id="334" parent="306" name="EMPNO">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="335" parent="306" name="ENAME">
-      <Position>2</Position>
-      <StoredType>varchar(10)|0s</StoredType>
-    </column>
-    <column id="336" parent="306" name="JOB">
-      <Position>3</Position>
-      <StoredType>varchar(9)|0s</StoredType>
-    </column>
-    <column id="337" parent="306" name="MGR">
+    <column id="312" parent="302" name="NAME">
       <Position>4</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="338" parent="306" name="HIREDATE">
+    <column id="313" parent="302" name="CREATED">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>5</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="339" parent="306" name="SAL">
-      <Position>6</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
-    </column>
-    <column id="340" parent="306" name="COMM">
-      <Position>7</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
-    </column>
-    <column id="341" parent="306" name="DEPTNO">
-      <Position>8</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <index id="342" parent="306" name="PRIMARY">
-      <ColNames>EMPNO</ColNames>
+    <index id="314" parent="302" name="PRIMARY">
+      <ColNames>ID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="343" parent="306" name="PRIMARY">
+    <index id="315" parent="302" name="USER_ID">
+      <ColNames>USER_ID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="316" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="344" parent="307" name="EMPNO">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="345" parent="307" name="ENAME">
-      <Position>2</Position>
-      <StoredType>varchar(10)|0s</StoredType>
-    </column>
-    <column id="346" parent="307" name="JOB">
-      <Position>3</Position>
-      <StoredType>varchar(9)|0s</StoredType>
-    </column>
-    <column id="347" parent="307" name="DEPTNO">
-      <Position>4</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <foreign-key id="348" parent="307" name="FK_DEPTNO">
-      <ColNames>DEPTNO</ColNames>
-      <RefColNames>DEPTNO</RefColNames>
-      <RefTableName>dept_fk</RefTableName>
-    </foreign-key>
-    <index id="349" parent="307" name="PRIMARY">
-      <ColNames>EMPNO</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="350" parent="307" name="FK_DEPTNO">
-      <ColNames>DEPTNO</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="351" parent="307" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    <key id="317" parent="302" name="USER_ID">
+      <UnderlyingIndexName>USER_ID</UnderlyingIndexName>
     </key>
-    <column id="352" parent="308" name="GRADE">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="353" parent="308" name="LOSAL">
-      <Position>2</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
-    </column>
-    <column id="354" parent="308" name="HISAL">
-      <Position>3</Position>
-      <StoredType>decimal(7,2 digit)|0s</StoredType>
-    </column>
-    <index id="355" parent="308" name="PRIMARY">
-      <ColNames>GRADE</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="356" parent="308" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="357" parent="309" name="login_id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="358" parent="309" name="login_pw">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="359" parent="309" name="TEL">
-      <Position>3</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="360" parent="310" name="id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="361" parent="310" name="password">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="362" parent="310" name="name">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="363" parent="311" name="id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="364" parent="311" name="password">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="365" parent="311" name="name">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
   </database-model>
 </dataSource>
