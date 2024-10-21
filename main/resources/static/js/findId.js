@@ -22,8 +22,8 @@ $(document).ready(() => {
             success: (response) => {
                 console.log('res :: ', response);
                 // 서버가 성공적으로 아이디를 반환한 경우
-                alert(response.message + '\n귀하의 아이디는 ' + response.userId + " 입니다.");
-                // window.location.href = response.url; // 로그인 페이지로 이동
+                alert(response.message + '\n귀하의 아이디는 ' + response.userId + " 입니다.\n로그인 페이지로 이동합니다.");
+                 window.location.href = response.url; // 로그인 페이지로 이동
             },
             error: (xhr, err) => {
                 console.log('find user :: ', err)

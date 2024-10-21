@@ -1,10 +1,6 @@
 package com.example.tobi.team3.controller;
 
-import com.example.tobi.team3.dto.FindIdRequestDTO;
-import com.example.tobi.team3.dto.FindIdResponseDTO;
-import com.example.tobi.team3.dto.SignUpRequestDTO;
-import com.example.tobi.team3.dto.SignUpResponseDTO;
-import com.example.tobi.team3.mapper.UserMapper;
+import com.example.tobi.team3.dto.*;
 import com.example.tobi.team3.model.User;
 import com.example.tobi.team3.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -33,14 +29,14 @@ public class UserApiController {
     @PostMapping("/findId")
     public ResponseEntity<FindIdResponseDTO> findId(
             @RequestBody FindIdRequestDTO findIdRequestDTO
-    ){
+    ) {
 
         User usered = userService.findId(findIdRequestDTO.getUserName(), findIdRequestDTO.getPhone());
 //        System.out.println("usered :: " + usered);
 //
-        if (usered.getUserName().equals(findIdRequestDTO.getUserName())&&
+        if (usered.getUserName().equals(findIdRequestDTO.getUserName()) &&
                 usered.getPhone().equals(findIdRequestDTO.getPhone())
-        ){
+        ) {
 
             FindIdResponseDTO responseDTO = FindIdResponseDTO.builder()
                     .message("성공!")
@@ -51,7 +47,7 @@ public class UserApiController {
             return ResponseEntity.ok(
                     responseDTO
             );
-        }else{
+        } else {
             return ResponseEntity.ok(
                     FindIdResponseDTO.builder()
                             .message("입력하신 정보가 틀렸습니다.\n 다시 시도해주세요")
@@ -59,9 +55,17 @@ public class UserApiController {
                             .build()
             );
         }
-
-
     }
 
-
+        @PutMapping("/changePw")
+    public ResponseEntity<ChangePwResponseDTO> changePassword(
+            @RequestBody ChangePwRequestDTO changePwRequestDTO) {
+        System.out.println("changePwRequestDTO: " + changePwRequestDTO);
+        userService.changePw(changePwRequestDTO.toUser(bCryptPasswordEncoder));
+        return ResponseEntity.ok(
+                ChangePwResponseDTO.builder()
+                        .url("/main/login")
+                        .message("비밀번호 변경 성공!\n로그인해주세요.")
+                        .build());
+    }
 }

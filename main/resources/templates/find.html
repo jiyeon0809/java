@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
-  <script th:src="@{/js/findId.js}"></script>
+  <script th:src="@{/js/find.js}"></script>
   <link th:href="@{/css/find.css}" rel="stylesheet">
   <title>아이디/비밀번호 찾기</title>
 </head>
@@ -12,7 +12,7 @@
 <div class="box">
   <div class="container">
     <a th:href="@{/main/find/findId}" class="btn" id="find-id">아이디 찾기</a>
-    <a th:href="@{/main/login}" class="btn" id="find-password">비밀번호 찾기</a>
+    <a th:href="@{/main/find/changePw}" class="btn" id="find-password">비밀번호 찾기</a>
   </div>
 </div>
 </body>

@@ -25,6 +25,4 @@ public class UserDetailService implements UserDetailsService {
                 .user(user)
                 .build();
     }
-
-
 }

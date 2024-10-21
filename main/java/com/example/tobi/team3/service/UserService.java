@@ -15,6 +15,10 @@ public class UserService {
         userMapper.signUp(user);
     }
 
+    public void changePw(User user) {
+        userMapper.changePw(user);
+    }
+
     public User findId(String userName, String phone){
         return userMapper.findId(
                 User.builder()
@@ -23,17 +27,7 @@ public class UserService {
                         .build());
     }
 
-//    public User findId(String userName, String phone){
-//
-//        User 사용자조건 = User.builder()
-//                .userName(userName)
-//                .phone(phone)
-//                .build();
-//
-//
-//        User 결과물 = userMapper.findId(사용자조건);
-//
-//
-//        return 결과물;
-//    }
+    public void findUser(User user){
+        userMapper.findUser(user);
+    }
 }

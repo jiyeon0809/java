@@ -10,7 +10,7 @@ $(document).ready(() => {
         let address = $('#address').val();
 
         if(userId == "" || password == "" || userName == "" || email == ""
-            || phone == "" || address == ""){
+        || phone == "" || address == ""){
             alert('모든 정보를 기입해주세요.')
             return "redirect:/main/join"
         }
