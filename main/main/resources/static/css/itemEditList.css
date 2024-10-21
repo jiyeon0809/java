@@ -1,0 +1,51 @@
+/* 기존 스타일 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.products a {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.products a.selected {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+/* 수정 버튼 스타일 */
+#editItemBtn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#editItemBtn:hover {
+    background-color: #0056b3;
+}
+
+
+.logo {
+    font-family: 'Snap ITC', cursive;
+    font-size: 48px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 20px;
+}
